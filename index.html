@@ -9,18 +9,47 @@
 </head>
 
 <body onload="onInit()">
-    <h1>Meme Generator</h1>
+
+    <header class="main-header flex space-between align-center">
+        <div><img src="images/LOGO.png" class="logo" alt="MemeGen" /></div>
+        <nav class="main-nav">
+            <ul class="main-nav-list flex clean-list">
+                <li><button class="btn nav-btn">Gallery</button></li>
+                <li><button class="btn nav-btn">About</button></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="gallery">
-        <h2>gallery</h2>
     </section>
 
     <section class="editor hidden">
-        <h2>editor</h2>
         <canvas id="my-canvas" class="canvas" height="600" width="600"></canvas>
-        <h3>Changing:</h3>
-        <input type="text" class="user-text" oninput="onSetText(this.value)">
     </section>
+
+    <section class="control-box hidden">
+        <input type="text" class="user-text" placeholder="Edit text" oninput="onSetText(this.value)">
+        <br><br>
+        <button onclick="onNextLine()"><img class="pic-button" src="images/add.png"></button>
+        <button onclick="onSwitchLine()"><img class="pic-button" src="images/up-and-down.png"></button>
+        <button onclick="onChangeFont(2)"><img class="pic-button" src="images/increase-font.png"></button>
+        <br>
+        <button onclick="onChangeFont(-2)"><img class="pic-button" src="images/decrease-font.png"></button>
+        <button onclick="onChangeAlignment('left')"><img class="pic-button" src="images/align-to-left.png"></button>
+        <button onclick="onChangeAlignment('center')"><img class="pic-button" src="images/center-alignment.png"></button>
+        <br>
+        <button onclick="onChangeAlignment('right')"><img class="pic-button" src="images/align-to-right.png"></button>
+        <button onclick="onChangeLocation(3)"><img class="pic-button" src="images/add.png"></button>
+        <button onclick="onChangeLocation(-3)"><img class="pic-button" src="images/add.png"></button>
+        <div>
+            <input type="color" id="body" name="body" value="#f6b73c" onclick="onChangeColor(value)">
+        </div>
+    </section>
+
+    <footer class="main-footer-container full main-layout">
+        <div class="logo-footer"><img src="images/LOGO.png" class="logo" alt="MemeGen" /></div>
+        <div class="rights-footer"><h3>All rights reserved 2022</h3></div>
+    </footer>
     
     <script src="js/services/util.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
@@ -30,4 +59,5 @@
     <script src="js/main.js"></script>
     
 </body>
+
 </html>
