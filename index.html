@@ -31,16 +31,14 @@
         <input type="text" class="user-text" placeholder="Edit text" oninput="onSetText(this.value)">
         <br><br>
         <button onclick="onNextLine()"><img class="pic-button" src="images/add.png"></button>
-        <button onclick="onSwitchLine()"><img class="pic-button" src="images/up-and-down.png"></button>
         <button onclick="onChangeFont(2)"><img class="pic-button" src="images/increase-font.png"></button>
-        <br>
-        <button onclick="onChangeFont(-2)"><img class="pic-button" src="images/decrease-font.png"></button>
+        <button onclick="onChangeFont(-2)"><img class="pic-button" src="images/decrease-font.png"></button><br>
         <button onclick="onChangeAlignment('left')"><img class="pic-button" src="images/align-to-left.png"></button>
         <button onclick="onChangeAlignment('center')"><img class="pic-button" src="images/center-alignment.png"></button>
-        <br>
-        <button onclick="onChangeAlignment('right')"><img class="pic-button" src="images/align-to-right.png"></button>
-        <button onclick="onChangeLocation(3)"><img class="pic-button" src="images/add.png"></button>
-        <button onclick="onChangeLocation(-3)"><img class="pic-button" src="images/add.png"></button>
+        <button onclick="onChangeAlignment('right')"><img class="pic-button" src="images/align-to-right.png"></button><br>
+        <button class="switch" onclick="onSwitchLine()"><img class="pic-button" src="images/up-and-down.png"></button>
+        <button onclick="onChangeLocation(3)"><img class="pic-button" src="images/down-arrow.png"></button>
+        <button onclick="onChangeLocation(-3)"><img class="pic-button" src="images/up-arrow.png"></button>
         <div>
             <input type="color" id="body" name="body" value="#f6b73c" onclick="onChangeColor(value)">
         </div>
@@ -51,7 +49,6 @@
         <div class="rights-footer"><h3>All rights reserved 2022</h3></div>
     </footer>
     
-    <script src="js/services/util.service.js"></script>
     <script src="js/services/gallery.service.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/gallery.controller.js"></script>

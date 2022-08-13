@@ -39,12 +39,12 @@ function drawText() {
             gCtx.strokeStyle = 'black'
         switch (gMeme.lines[idx].align) {
             case 'left':
-                gCtx.fillText(line.txt, 100, line.y)
-                gCtx.strokeText(line.txt, 100, line.y)
+                gCtx.fillText(line.txt, 120, line.y)
+                gCtx.strokeText(line.txt, 120, line.y)
                 break
             case 'center':
-                gCtx.fillText(line.txt, 250, line.y)
-                gCtx.strokeText(line.txt, 250, line.y)
+                gCtx.fillText(line.txt, 300, line.y)
+                gCtx.strokeText(line.txt, 300, line.y)
                 break
             case 'right':
                 gCtx.fillText(line.txt, 450, line.y)

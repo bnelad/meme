@@ -3,7 +3,6 @@ body {
 }
 
 .main-header {
-    
     background-color: rgba(245, 140, 42, 0.945);
     padding: 5px;
     margin-top: auto;
@@ -42,6 +41,11 @@ body {
     width: 300px;
     padding-right: 12px;
     padding-bottom: 12px;
+
+}
+
+.pic:hover {
+    cursor: pointer;
 }
 
 .pic-button {
@@ -68,6 +72,10 @@ body {
 button {
     margin-bottom: 16px;
     margin-right: 16px;
+}
+
+.switch {
+    padding-bottom: 10px;
 }
 
 input[type=text] {
@@ -123,7 +131,6 @@ h3 {
     margin-right: auto;
 }
 
-
 @media (min-width: 450px) {
 
     .main-header .nav-btn {
@@ -177,6 +184,11 @@ h3 {
   
     .control-box {
         margin-left: 100px;
+    }
+
+    .pic:hover {
+        outline: 2px solid rgba(245, 140, 42, 0.945);
+        opacity: 0.7;
     }
 }
 
