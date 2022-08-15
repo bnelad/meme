@@ -131,6 +131,26 @@ h3 {
     margin-right: auto;
 }
 
+.color-input {
+    padding: 10px;
+}
+
+input[type=color] {
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 25px;
+    padding-bottom: 11px;
+    margin: 8px 0;
+    box-sizing: content-box;
+  }
+
+.random-meme {
+    padding: 4px;
+    font-size: 40px;
+    margin-left: 40px;
+
+}
+
 @media (min-width: 450px) {
 
     .main-header .nav-btn {
@@ -170,6 +190,10 @@ h3 {
         margin-left: 30px;
     }
 
+    .pic:hover {
+        opacity: 0.7;
+    }
+
 }
 
 @media (min-width: 1000px) {
@@ -184,11 +208,6 @@ h3 {
   
     .control-box {
         margin-left: 100px;
-    }
-
-    .pic:hover {
-        outline: 2px solid rgba(245, 140, 42, 0.945);
-        opacity: 0.7;
     }
 }
 

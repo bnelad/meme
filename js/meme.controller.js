@@ -22,6 +22,54 @@ function renderMeme() {
     }
 }
 
+function renderRandomMeme(randomMeme) {
+    const memeId = randomMeme.selectedImgId
+    const img = new Image()
+    img.src = `images/${memeId}.jpg`
+    
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+        console.log('randomMeme lines: ', randomMeme.lines)
+        console.log('aaaaaaaa11')
+        console.log(randomMeme)
+        drawRandomText(randomMeme)     
+    }
+}
+
+function drawRandomText(randomMeme) {
+    const lines = randomMeme.lines
+    lines.forEach((line, idx) => {
+        gCtx.beginPath()
+        gCtx.textBaseline = 'middle'
+        gCtx.textAlign = 'center'
+        gCtx.lineWidth = 1
+        const fontSize = randomMeme.lines[idx].size
+        gCtx.font = `${fontSize}px david`
+        const colorTxt = randomMeme.lines[idx].color
+        gCtx.fillStyle = colorTxt
+        if (randomMeme.selectedLineIdx === idx)
+            gCtx.strokeStyle = 'red'
+        else
+            gCtx.strokeStyle = 'black'
+        switch (randomMeme.lines[idx].align) {
+            case 'left':
+                gCtx.fillText(line.txt, 120, line.y)
+                gCtx.strokeText(line.txt, 120, line.y)
+                break
+            case 'center':
+                gCtx.fillText(line.txt, 300, line.y)
+                gCtx.strokeText(line.txt, 300, line.y)
+                break
+            case 'right':
+                gCtx.fillText(line.txt, 450, line.y)
+                gCtx.strokeText(line.txt, 450, line.y)
+                break
+            default:
+        }
+        gCtx.closePath()
+    })
+}
+
 function drawText() {
     const lines = getMeme().lines
     lines.forEach((line, idx) => {
@@ -61,7 +109,7 @@ function onSetText(txt){
     renderMeme()
 }
 
-function drawText2(txt, x, y) {
+function drawText4(txt, x, y) {
     const lines = getMeme().lines
     lines.forEach((line, idx) => {
         gCtx.beginPath()
@@ -104,4 +152,8 @@ function onChangeColor(newColor) {
 function onChangeLocation(locationChange) {
     changeLocation(locationChange)
     renderMeme()
+}
+
+function onMakeRandomMeme() {
+    makeRandomMeme()
 }

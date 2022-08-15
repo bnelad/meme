@@ -1,5 +1,8 @@
 'use strict'
 
+const memes = ['I like it', 'Nice one', 'Not bad my friend', 'Great thing', 'Smart choice', 'Brilliant decision', 'Spectacular show', 'Tell me about it', 'Tell me more', 'We can do it']
+const colors = ['white', 'aqua', 'red', 'black', 'blue', 'pink', 'yellow']
+
 var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
 
 var gMeme = {
@@ -72,4 +75,69 @@ function changeColor(newColor) {
 
 function changeLocation(locationChange) {
     gMeme.lines[gMeme.selectedLineIdx].y += locationChange
+}
+
+function makeRandomMeme() {
+    if (document.querySelector('.editor').classList.contains('hidden')) changingSectionView()
+    const randomMeme = getRandomMeme()
+    console.log('randomMeme111: ', randomMeme)
+    renderRandomMeme(randomMeme)
+}
+
+function getRandomMeme() {
+    const memeId = getRandomIntInclusive(1, 18)
+    const linesNum = getRandomIntInclusive(1, 2)
+    const color = colors[getRandomIntInclusive(0, 6)]
+    console.log('linesNum:', linesNum)
+    if (linesNum === 1) {
+        const line = memes[getRandomIntInclusive(0, 9)]
+        const color = colors[getRandomIntInclusive(0, 6)]
+        const textSize = getRandomIntInclusive(32, 55)
+        const randomMeme = {
+            selectedImgId: memeId,
+            selectedLineIdx: 0,
+            lines: [
+                {   
+                txt: line,
+                size: textSize,
+                align: 'center',
+                color: color,
+                y: 50
+                } 
+            ]
+        }
+        console.log('randomMeme: ', randomMeme)
+        gMeme = randomMeme
+    } else {
+        console.log('wwwww')
+        const line1 = memes[getRandomIntInclusive(0, 9)]
+        const line2 = memes[getRandomIntInclusive(0, 9)]
+        const color1 = colors[getRandomIntInclusive(0, 6)]
+        const color2 = colors[getRandomIntInclusive(0, 6)]
+        const textSize1 = getRandomIntInclusive(32, 55)
+        const textSize2 = getRandomIntInclusive(32, 55)
+        const randomMeme = {
+            selectedImgId: memeId,
+            selectedLineIdx: 0,
+            lines: [
+                {   
+                txt: line1,
+                size: textSize1,
+                align: 'center',
+                color: color1,
+                y: 50
+                },
+                {   
+                txt: line2,
+                size: textSize2,
+                align: 'center',
+                color: color2,
+                y: 500
+                },
+            ]
+        }
+        console.log('randomMeme: ', randomMeme)
+        gMeme = randomMeme
+    }  
+    return gMeme
 }
